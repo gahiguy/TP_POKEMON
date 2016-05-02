@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>Pokédex</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body background="10664g-pokemon-photo-high-quality.JPG" ng-app="pokedex">
+
+<div class="container">
+<h1>Pokésir</h1>
+
+
+<!-- Search -->
+
+    <div ng-controller="myCtrl1">
+		<h5>find pokémon by 	</h5>
+        <p> id <input type="text" ng-model="id"></p>
+        <br> 	
+        <p> name <input type="text" ng-model="namePokemon">
+		<div ng-controller="myCtrl2">
+
+      
+
+		<!-- filtrer à partir du  ng-model="namePokemon" -->
+				<select size=5 ng-model="pokRace">
+					<option style="display:none" value="">select a pokemeon</option>
+                    <option ng-repeat="x in names | filter : namePokemon">{{x.name}}</option>
+				</select>
+
+             <br/>
+		</p>
+
+		</div>
+		
+       
+       
+
+        <h1> #{{ idp }} </h1> <h1> {{ namep }} </h1>  skills :
+
+        <ul>
+        <li ng-repeat="x in skills">
+        {{ x.move.name}}
+        </li>
+        </ul>
+    </div>
+
+    
+
+</div>
+
+</div>
+
+
+
+<!-- Dependencies -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
+
+<!-- Pokedex app -->
+<script src="js/pokedex.js"></script>
+
+
+</body>
+</html>
